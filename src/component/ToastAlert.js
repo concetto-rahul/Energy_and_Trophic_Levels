@@ -1,4 +1,4 @@
-const ToastAlert = ({ type, text }) => {
+const ToastAlert = ({ type, text, closeAction }) => {
   return (
     <div class={`toast-wrapper ${type}`}>
       <div class={`toast-container icon-only ${type}`}>
@@ -13,6 +13,7 @@ const ToastAlert = ({ type, text }) => {
           class={`toast-button ${type}`}
           title="Close"
           aria-label="Close"
+          onClick={closeAction}
         >
           <span class="icon" aria-hidden="true"></span>
         </button>

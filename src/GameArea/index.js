@@ -22,15 +22,15 @@ const GameArea = () => {
   const completionStepSong = useMemo(() => {
     return new Audio(CompletionStepSong);
   }, []);
-  const [showAlert, setShowAlert] = useState(false);
+  const [showAlert, setShowAlert] = useState(true);
   const [selectedStep, setSelectedStep] = useState([]);
   const [activeStep, setActiveStep] = useState(0);
   const [isAllStepCheck, setIsAllStepCheck] = useState(false);
   const [screen2Step, setScreen2Step] = useState(5);
   const [selectedStep2, setSelectedStep2] = useState([]);
   const [completionScreen, setCompletionScreen] = useState(false);
-  const [showQuiz, setShowQuiz] = useState(true);
-  const [questionRightWrong, setQuestionRightWrong] = useState("warning");
+  const [showQuiz, setShowQuiz] = useState(false);
+  const [questionRightWrong, setQuestionRightWrong] = useState("");
   const [quizComplete, setQuizComplete] = useState(false);
 
   const closeAction = useCallback(() => {
@@ -49,7 +49,9 @@ const GameArea = () => {
 
   const nextAction = useCallback(() => {
     clickSong.play();
+    setActiveStep(0);
     setIsAllStepCheck(true);
+    setSelectedStep([]);
     setTimeout(() => {
       nextStepSong.play();
     }, 400);
@@ -78,6 +80,9 @@ const GameArea = () => {
   const continueToQuiz = () => {
     setShowQuiz(true);
     setCompletionScreen(false);
+    setIsAllStepCheck(false);
+    setSelectedStep2([]);
+    setScreen2Step(5);
     clickSong.play();
   };
 
