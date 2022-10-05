@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>6BBEAB43-6137-45FF-83E5-A5BFF156012C</title>
+    <g id="style-guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-sheet" transform="translate(-636.000000, -218.000000)" fill-rule="nonzero">
+            <g id="icon" transform="translate(636.000000, 218.000000)">
+                <path d="M24,0 C10.7419355,0 0,10.7419355 0,24 C0,37.2580645 10.7419355,48 24,48 C37.2580645,48 48,37.2580645 48,24 C48,10.7419355 37.2580645,0 24,0 Z" id="Path" fill="#0056B3"></path>
+                <path d="M35.1967742,26.3225806 L18.1645161,36.0967742 C16.6354839,36.9483871 14.7096774,35.8548387 14.7096774,34.0645161 L14.7096774,13.9354839 C14.7096774,12.1548387 16.6258065,11.0516129 18.1645161,11.9032258 L35.1967742,22.2580645 C36.783871,23.1483871 36.783871,25.4419355 35.1967742,26.3225806 Z" id="Path" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

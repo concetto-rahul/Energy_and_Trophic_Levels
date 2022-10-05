@@ -1,0 +1,502 @@
+.game-area {
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  top: 0;
+  left: 0;
+  .game-container {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    .left {
+      width: 540px;
+      height: 100%;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .food-chain {
+        width: 540px;
+        height: 220px;
+        background-image: url(../../public/assets/images/foodchain.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        .active-box {
+          border: 2px dashed #052978;
+          border-radius: 4px;
+          background-color: rgba(217, 235, 255, 0.24);
+          position: absolute;
+        }
+        .sun {
+          width: 70px;
+          height: 70px;
+          top: 0;
+          left: 16px;
+        }
+        .flower {
+          width: 130px;
+          height: 100px;
+          bottom: 3px;
+          left: 3px;
+        }
+        .rabbit {
+          width: 70px;
+          height: 70px;
+          bottom: 15px;
+          left: 175px;
+        }
+        .snake {
+          width: 130px;
+          height: 55px;
+          bottom: 3px;
+          right: 110px;
+        }
+        .eagle {
+          width: 140px;
+          height: 110px;
+          top: 3px;
+          right: 3px;
+        }
+        .arrow {
+          width: 36px;
+          height: 32px;
+          background-image: url(../../public/assets/images/arrow.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          display: none;
+          &.show {
+            display: block;
+          }
+          &.first-arrow {
+            transform: rotate(90deg);
+            top: 78px;
+            left: 20px;
+          }
+          &.second-arrow {
+            transform: rotate(0deg);
+            bottom: 20px;
+            left: 138px;
+          }
+          &.third-arrow {
+            transform: rotate(0deg);
+            bottom: 20px;
+            left: 255px;
+          }
+          &.fourth-arrow {
+            transform: rotate(-60deg);
+            bottom: 60px;
+            right: 80px;
+          }
+        }
+      }
+      .text-info {
+        color: #35374c;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+        text-align: center;
+        padding-top: 8px;
+      }
+      .pyramid-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-top: 24px;
+        .empty-pyramid {
+          position: relative;
+          background-image: url(../../public/assets/images/pyramid_empty.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          height: 276px;
+          width: 324px;
+          .pyramid-sections {
+            position: absolute;
+            height: 276px;
+            width: 324px;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            &.show-pyramid {
+              opacity: 1;
+            }
+            &.pyramid-eagle {
+              background-image: url(../../public/assets/images/pyramid_eagle.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+            &.pyramid-snake {
+              background-image: url(../../public/assets/images/pyramid_snake_.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+            &.pyramid-rabbit {
+              background-image: url(../../public/assets/images/pyramid_rabbit.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+            &.pyramid-plant {
+              background-image: url(../../public/assets/images/pyramid_plant.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+
+          .btn-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            &.first-box {
+              top: 23px;
+              right: -30px;
+            }
+            &.second-box {
+              top: 86px;
+              right: -80px;
+            }
+            &.third-box {
+              top: 152px;
+              right: -106px;
+            }
+            &.fourth-box {
+              top: 228px;
+              right: -100px;
+            }
+            .dot {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background-color: #352103;
+            }
+            .link-line {
+              width: 26px;
+              border: 1px dashed #352103;
+            }
+            button {
+              background-color: #352103;
+              border-radius: 30px;
+              padding: 6px 18px;
+              border: none;
+              cursor: pointer;
+              font-family: inherit;
+
+              color: #ffffff;
+              font-size: 12px;
+              letter-spacing: 0.4px;
+              line-height: 16px;
+              font-weight: 100;
+              &.active {
+                background-color: #ba5b08;
+              }
+            }
+            .tick-icon {
+              height: 12px;
+              width: 12px;
+              background-image: url(../../public/assets/images/tick_mark.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              position: absolute;
+              top: 5px;
+              left: 42px;
+              opacity: 0;
+              &.show {
+                opacity: 1;
+              }
+            }
+          }
+        }
+        .pyramid-text {
+          color: #35374c;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 0.25px;
+          line-height: 20px;
+          text-align: center;
+          position: relative;
+          padding-top: 8px;
+          top: 150px;
+          left: -200px;
+        }
+      }
+    }
+    .right {
+      padding: 10px 20px;
+      .next-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1b8338;
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 8px;
+        border: none;
+        font-family: inherit;
+        cursor: pointer;
+        .text {
+          font-size: 16px;
+          margin: 0 8px;
+          font-weight: bold;
+          line-height: 24px;
+          color: #ffffff;
+          letter-spacing: 0.15px;
+        }
+        .start-btn-icon {
+          width: 24px;
+          height: 24px;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+  .game-container1 {
+    background-color: #f0f0f0;
+    width: 800px;
+    height: 100%;
+    .top-area {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      .food-chain {
+        width: 100%;
+        height: 100%;
+        background-image: url(../../public/assets/images/foodchain2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+
+        .active-box {
+          border: 2px dashed #052978;
+          border-radius: 4px;
+          background-color: rgba(217, 235, 255, 0.24);
+          position: absolute;
+        }
+        .sun {
+          height: 76px;
+          width: 80px;
+          top: 0;
+          left: 48px;
+        }
+        .flower {
+          width: 140px;
+          height: 102px;
+          bottom: 0px;
+          left: 34px;
+
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+        }
+        .rabbit {
+          width: 90px;
+          height: 94px;
+          bottom: 0px;
+          left: 222px;
+
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          animation-delay: 2s;
+          animation-fill-mode: forwards;
+        }
+        .snake {
+          width: 130px;
+          height: 66px;
+          bottom: 0px;
+          right: 304px;
+
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          animation-delay: 3s;
+          animation-fill-mode: forwards;
+        }
+        .eagle {
+          width: 146px;
+          height: 115px;
+          top: 0px;
+          right: 206px;
+
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          animation-delay: 4s;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+    .bottom-area {
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      position: relative;
+
+      .text-info {
+        color: #35374c;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+        text-align: center;
+        padding-top: 8px;
+      }
+      .pyramid-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 24px;
+        .empty-pyramid {
+          position: relative;
+          background-image: url(../../public/assets/images/pyramid_empty.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          height: 276px;
+          width: 324px;
+          .pyramid-sections {
+            position: absolute;
+            height: 276px;
+            width: 324px;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            animation: fadeIn 1s linear forwards;
+            &.show-pyramid {
+              opacity: 1;
+            }
+            &.pyramid-eagle {
+              background-image: url(../../public/assets/images/pyramid_eagle.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              animation-delay: 4s;
+            }
+            &.pyramid-snake {
+              background-image: url(../../public/assets/images/pyramid_snake_.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              animation-delay: 3s;
+            }
+            &.pyramid-rabbit {
+              background-image: url(../../public/assets/images/pyramid_rabbit.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              animation-delay: 2s;
+            }
+            &.pyramid-plant {
+              background-image: url(../../public/assets/images/pyramid_plant.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              animation-delay: 1s;
+            }
+          }
+
+          .btn-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            &.first-box {
+              top: 23px;
+              right: -30px;
+            }
+            &.second-box {
+              top: 86px;
+              right: -80px;
+            }
+            &.third-box {
+              top: 152px;
+              right: -106px;
+            }
+            &.fourth-box {
+              top: 228px;
+              right: -100px;
+            }
+            .dot {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background-color: #352103;
+            }
+            .link-line {
+              width: 26px;
+              border: 1px dashed #352103;
+            }
+            button {
+              background-color: #352103;
+              border-radius: 30px;
+              padding: 6px 18px;
+              border: none;
+              cursor: pointer;
+              font-family: inherit;
+
+              color: #ffffff;
+              font-size: 12px;
+              letter-spacing: 0.4px;
+              line-height: 16px;
+              font-weight: 100;
+              &.active {
+                background-color: #ba5b08;
+              }
+            }
+            .tick-icon {
+              height: 12px;
+              width: 12px;
+              background-image: url(../../public/assets/images/tick_mark.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              position: absolute;
+              top: 5px;
+              left: 42px;
+              opacity: 0;
+              &.show {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      .pyramid-text {
+        color: #35374c;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+        text-align: center;
+        position: relative;
+        padding-top: 8px;
+      }
+      .next-btn {
+        bottom: 10px;
+        right: 20px;
+        position: absolute;
+
+        background-color: #1b8338;
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 8px;
+        border: none;
+        font-family: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        .text {
+          font-size: 16px;
+          margin: 0 8px;
+          font-weight: bold;
+          line-height: 24px;
+          color: #ffffff;
+          letter-spacing: 0.15px;
+        }
+        .icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.congratulations-screen-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 2;
+  .congratulations-screen-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(53, 55, 76, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .congratulations-screen {
+      width: 360px;
+      position: relative;
+      .grass-left {
+        top: 60px;
+        left: -90px;
+        width: 109px;
+        height: 122px;
+        background-image: url(../../public/assets/images/grass_left.svg);
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .leaves-left {
+        top: -50px;
+        left: -57px;
+        width: 66px;
+        height: 218px;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../../public/assets/images/leaves_left.svg);
+      }
+      .grass-leaves-right {
+        top: -25px;
+        right: -119px;
+        width: 286px;
+        height: 123px;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../../public/assets/images/grass_leaves_right_attention.svg);
+      }
+      .congratulations-screen-content {
+        border: 2px solid #002e0e;
+        color: #002e0e;
+        background: #eef7f0;
+        width: 100%;
+        padding: 32px;
+        position: relative;
+        border-radius: 32px;
+
+        .icon {
+          width: 48px;
+          height: 48px;
+          margin-bottom: 12px;
+          background-image: url(../../public/assets/images/attention_right_icon.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .heading {
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 36px;
+        }
+        .content {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .continue-btn {
+          padding: 8px;
+          border: none;
+          cursor: pointer;
+          border-radius: 8px;
+          color: #ffffff;
+          pointer-events: auto;
+          background: transparent;
+          display: flex;
+          align-items: center;
+          flex-direction: row-reverse;
+
+          margin-top: 18px;
+          background: #352103;
+
+          .text {
+            font-size: 16px;
+            margin-left: 8px;
+            font-weight: bold;
+            line-height: 24px;
+            margin-right: 8px;
+            color: #ffffff;
+            letter-spacing: 0.15px;
+          }
+          .arrow-icon {
+            width: 24px;
+            height: 24px;
+
+            display: block;
+            background: url(../../public/assets/images/reset_icon_white.svg);
+          }
+        }
+      }
+    }
+  }
+}
